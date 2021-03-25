@@ -1,6 +1,6 @@
 var base =parseFloat(prompt("Enter your base : "));
 var power =parseFloat(prompt("Enter your power : "));
-var q, r, t=2;
+var q, r;
 
 var numberMabna = powers(power,base)
 console.log("is numberMabna ",numberMabna )
@@ -19,17 +19,18 @@ function powers (power , base){
     }
 return result;
 }
+// follow az (b*q + r) = a
 
 function BaseConversion(quotient){
     var residue = new Array() ;
     var j = 0;
  while(quotient != 0){
      var a =quotient;
-    var defaulte =0, b=0;
+     var defaulte =0, b=0;
 
     for(q=0; q <= a/2 ; q++){
 
-       for(r=0; r <t ;r++){
+       for(r=0; r <base ;r++){
          if ((b + r) == a){
              residue[j] = r;
              j++;
@@ -42,17 +43,16 @@ function BaseConversion(quotient){
          break;
           }
 
-          b += t;
+          b += base;
         }
 }
 var k=0;
 
 for(var i =j-1; i> 0; i--){
-  var temp =  residue[k]
-   residue[k] =residue[i];
-   residue[i]=temp
-   k++;
-    
-}
+    var temp =  residue[k]
+     residue[k] =residue[i];
+     residue[i]=temp
+     k++;
+    }
 return residue;
 }
