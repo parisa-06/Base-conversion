@@ -19,7 +19,7 @@ function powers (power , base){
     }
 return result;
 }
-// follow az (b*q + r) = a
+// following az (b*q + r) = a
 
 function BaseConversion(quotient){
     var residue = new Array() ;
